@@ -30,7 +30,7 @@ void kugel() {
 void zylinder() {
 }
 
-int main() {
+int geometry() {
     int eingabe;
     printf("<--Einfaches Programm zur Berechnung der Fläche und Volumina ausgewählter Formen-->\n\n");
 
@@ -51,6 +51,5 @@ int main() {
     }
 
     //Ausgabe
-    printf("Die Fläche beträgt: %d\nDas Volumina beträgt: %d", flaeche, volumina);
-    return 0;
+    return printf("Die Fläche beträgt: %d\nDas Volumina beträgt: %d", flaeche, volumina);
 }
