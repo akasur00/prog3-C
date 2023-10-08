@@ -1,5 +1,1 @@
-
-
-int floatingpoint(){
-    return 0;
-}
+int floatingpoint();
