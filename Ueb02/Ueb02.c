@@ -3,6 +3,7 @@
 #include "floatingpoint.h"
 #include "overflow.h"
 
+
 int main() {
     char input;
     printf("<--Programm für Aufgabenblatt_02 Prog3 WiSe23/24-->\n");
@@ -20,6 +21,8 @@ int main() {
         case 'c':
             overflow();
             break;
+        default:
+            return -1;
     }
     return 0;
 }

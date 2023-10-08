@@ -7,8 +7,11 @@ set(CMAKE_C_FLAGS "-lm")
 
 add_executable(prog3_C
         Ueb02/Ueb02.c
-        Ueb02/floatingpoint.h
         Ueb02/geometry.h
         Ueb02/overflow.h
+        Ueb02/geometry.c
+        Ueb02/overflow.c
+        Ueb02/floatingpoint.c
+        Ueb02/floatingpoint.h
 )
 
