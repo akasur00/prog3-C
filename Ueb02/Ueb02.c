@@ -22,7 +22,7 @@ int main() {
             overflow();
             break;
         default:
-            return 0;
+            return -1;
     }
     return 0;
 }
