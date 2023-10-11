@@ -3,7 +3,7 @@
 //
 #include <stdio.h>
 #include <math.h>
-#define F1 0.1f
+//Je höher K ist, desto größer ist die Ungenauigkeit in der Rechnung
 #define K 100.f
 
 int floatingpoint() {
