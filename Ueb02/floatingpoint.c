@@ -3,8 +3,8 @@
 //
 #include <stdio.h>
 #include <math.h>
-#define F1 0.1f
-#define K 100.f
+//Je höher K ist, desto größer ist die Ungenauigkeit in der Rechnung
+#define K 100000.f
 
 int floatingpoint() {
     float result;
@@ -13,7 +13,7 @@ int floatingpoint() {
     printf("\nRundungsfehler:\nRunden von 256.49999: %f\n", roundf(256.49999));
 
     //Rechnung zum Aufzeigen von Float-Fehlern
-    for (int i = 1; i < K; ++i) {
+    for (int i = 0; i < K; ++i) {
         sum = sum + 0.1f;
     }
     result = K / 10.f - sum;
