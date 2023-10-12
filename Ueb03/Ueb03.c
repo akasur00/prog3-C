@@ -2,27 +2,27 @@
 // Created by whuebner on 11.10.23.
 //
 #include<stdio.h>
-//#include "geometry.h"
-//#include "floatingpoint.h"
-//#include "overflow.h"
+#include "prog_limits.h"
+#include "compute_seconds.h"
+#include "temperature.h"
 
 
 int main() {
     char input;
     printf("<--Programm für Aufgabenblatt_03 Prog3 WiSe23/24-->\n");
     printf("Wählen sie aus folgenden Programmen aus:\n");
-    printf("(a) - geometry\n(b) - floatingpoint\n(c) - overflow\n");
+    printf("(a) - prog_limits\n(b) - compute_seconds\n(c) - temperature\n");
     scanf(" %c", &input);
 
     switch (input) {
         case 'a':
-            //geometry();
+            prog_limits();
             break;
         case 'b':
-            //floatingpoint();
+            compute_seconds();
             break;
         case 'c':
-            //overflow();
+            temperature();
             break;
         default:
             return -1;
