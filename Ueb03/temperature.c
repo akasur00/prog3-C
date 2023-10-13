@@ -75,7 +75,8 @@ int temperature(){
     double diff22_23 = temp_array2022[12] - temp_array2023[11];
 
     //Dump
-    printf("Average Temperature for 092021 - 082022:\t%f", average_0921_0822);
+    printf("<--Program for statistical temperature calculations-->");
+    printf("\n\nAverage Temperature for 092021 - 082022:\t%f", average_0921_0822);
     printf("\nStandard Deviation for 092021 - 082022:\t\t%f", deviation_0921_0822);
     printf("\nAverage Temperature for 092022 - 082023:\t%f", average_0922_0823);
     printf("\nStandard Deviation for 092022 - 082023:\t\t%f", deviation_0922_0823);
