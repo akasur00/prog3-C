@@ -24,7 +24,7 @@ int prog_limits(){
 
     printf("\nint max:\t\t\t\t %i", INT_MAX);
     printf("\nint min:\t\t\t\t %i", INT_MIN);
-    printf("\nunsigned int max:\t\t %ui", UINT_MAX);
+    printf("\nunsigned int max:\t\t %u", UINT_MAX);
 
     printf("\nlong max:\t\t\t\t %li", LONG_MAX);
     printf("\nlong min:\t\t\t\t %li", LONG_MIN);
