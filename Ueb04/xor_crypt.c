@@ -1,37 +1,8 @@
 //
 // Created by Akasur on 22.10.2023.
 //
-#include "stdlib.h"
 #include "stdio.h"
 #include "xor_crypt.h"
-
-//Create key from array
-char randchar(char input []){
-    char key;
-    int sum;
-    for (int i = 0; i < 256; ++i) {
-        sum +=input[i];
-    }
-    key = sum % 256;
-    return key;
-}
-
-//Crypt_Function
-void crypt_8bit(char input[256], char key){
-    //encryption
-    char encrypted_string [256];
-    for (int i = 0; i < 256; ++i) {
-        encrypted_string[i] = input[i]^key;
-    }
-    printf("\n\nencrypted string:\n%s", encrypted_string);
-
-    //decryption
-    char decrypted_string [256];
-    for (int i = 0; i < 256; ++i) {
-        decrypted_string[i] = encrypted_string[i]^key;
-    }
-    printf("\n\ndecrypted string:\n%s", decrypted_string);
-}
 
 int xor_crypt(){
     printf("<--program for encryption and decryption of strings based of XOR-operations-->\n");
@@ -42,20 +13,43 @@ int xor_crypt(){
     scanf(" %255s", in);
 
     //look how long string is
-    int i = 0;
-    while(in[i] /= ' ')
-        i++;
-    i++;    //add 1 more for escape-sequence
+    int length = 0;
+    while(in[length] != '\000')
+        length++;
+    length++;    //add 1 more for escape-sequence
 
     //create new smaller array
-    char dynarray [i];
-    for (int j = 0; j < i; ++j) {
-        dynarray[j] = in[j];
+    char dynarray [length];
+    for (int i = 0; i < length; ++i) {
+        dynarray[i] = in[i];
+    }
+
+    //Create key from input
+    char key [length];
+        for (int i = 0; i < length; ++i) {
+            key[i] = dynarray[i] % length;
+        }
+        //don't forget the escape
+        //key[length] = '\000';
+
+    //Encryption
+    char encrypted_string [length];
+    for (int i = 0; i < length; ++i) {
+        encrypted_string[i] = dynarray[i]^key[i];
+    }
+
+    //decryption
+    char decrypted_string [length];
+    for (int i = 0; i < length; ++i) {
+        decrypted_string[i] = encrypted_string[i]^key[i];
     }
 
 
-    printf("\nInput was: %s %d", dynarray, sizeof(dynarray));
-    //printf("\nkey was: %c", randchar(dynarray));
-    //crypt_8bit(dynarray, randchar(dynarray));
+    //Console-Output
+    printf("\nInput was:\t\t%s Size: %d", dynarray, sizeof(dynarray));
+    printf("\nkey is:\t\t\t%s", key);
+    printf("\nencrypted string:\t%s Size: %d", encrypted_string, sizeof(encrypted_string));
+    printf("\ndecrypted string:\t%s Size: %d", decrypted_string, sizeof(decrypted_string));
     return 0;
 }
+
