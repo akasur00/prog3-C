@@ -1,7 +1,6 @@
 //
 // Created by Akasur on 22.10.2023.
 //
-#include "stdlib.h"
 #include "stdio.h"
 #include "xor_crypt.h"
 
@@ -16,7 +15,6 @@ char randchar(char input []){
     return key;
 }
 
-//Crypt_Function
 void crypt_8bit(char input[256], char key){
     //encryption
     char encrypted_string [256];
@@ -34,28 +32,12 @@ void crypt_8bit(char input[256], char key){
 }
 
 int xor_crypt(){
-    printf("<--program for encryption and decryption of strings based of XOR-operations-->\n");
-
-    //read in first string
     char in [256];
-    printf("please input a  string for encryption:\n");
-    scanf(" %255s", in);
-
-    //look how long string is
-    int i = 0;
-    while(in[i] /= ' ')
-        i++;
-    i++;    //add 1 more for escape-sequence
-
-    //create new smaller array
-    char dynarray [i];
-    for (int j = 0; j < i; ++j) {
-        dynarray[j] = in[j];
-    }
-
-
-    printf("\nInput was: %s %d", dynarray, sizeof(dynarray));
-    //printf("\nkey was: %c", randchar(dynarray));
-    //crypt_8bit(dynarray, randchar(dynarray));
+    printf("<--program for encryption and decryption of strings based of XOR-operations-->\n");
+    printf("please input a  string for encryption and a char as the key:\n");
+    scanf("%s", &in);
+    printf("\nInput was: %s", in);
+    printf("\nkey was: %c", randchar(in));
+    crypt_8bit(in, randchar(in));
     return 0;
 }
