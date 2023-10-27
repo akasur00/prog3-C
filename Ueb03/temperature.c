@@ -76,23 +76,23 @@ int temperature(){
 
     //Dump
     printf("<--Program for statistical temperature calculations-->");
-    printf("\n\nAverage Temperature for 092021 - 082022:\t%f", average_0921_0822);
-    printf("\nStandard Deviation for 092021 - 082022:\t\t%f", deviation_0921_0822);
-    printf("\nAverage Temperature for 092022 - 082023:\t%f", average_0922_0823);
-    printf("\nStandard Deviation for 092022 - 082023:\t\t%f", deviation_0922_0823);
+    printf("\n\nAverage Temperature for 092021 - 082022:\t%0.1f", average_0921_0822);
+    printf("\nStandard Deviation for 092021 - 082022:\t\t%0.1f", deviation_0921_0822);
+    printf("\nAverage Temperature for 092022 - 082023:\t%0.1f", average_0922_0823);
+    printf("\nStandard Deviation for 092022 - 082023:\t\t%0.1f", deviation_0922_0823);
 
-    printf("\n\nAverage Temperature for fall 2021:\t%f", fall2021);
-    printf("\nAverage Temperature for fall 2022:\t%f", fall2022);
-    printf("\nAverage Temperature for winter 2021/22:\t%f", winter2021);
-    printf("\nAverage Temperature for winter 2022/23:\t%f", winter2022);
-    printf("\nAverage Temperature for spring 2022:\t%f", spring2022);
-    printf("\nAverage Temperature for spring 2023:\t%f", spring2023);
-    printf("\nAverage Temperature for summer 2022:\t%f", summer2022);
-    printf("\nAverage Temperature for summer 2023:\t%f", summer2023);
+    printf("\n\nAverage Temperature for fall 2021:\t%0.1f", fall2021);
+    printf("\nAverage Temperature for fall 2022:\t%0.1f", fall2022);
+    printf("\nAverage Temperature for winter 2021/22:\t%0.1f", winter2021);
+    printf("\nAverage Temperature for winter 2022/23:\t%0.1f", winter2022);
+    printf("\nAverage Temperature for spring 2022:\t%0.1f", spring2022);
+    printf("\nAverage Temperature for spring 2023:\t%0.1f", spring2023);
+    printf("\nAverage Temperature for summer 2022:\t%0.1f", summer2022);
+    printf("\nAverage Temperature for summer 2023:\t%0.1f", summer2023);
 
-    printf("\n\nDifference between Aug21 - Aug22:\t%f", diff21_22);
-    printf("\nDifference between Aug21 - Aug23:\t%f", diff21_23);
-    printf("\nDifference between Aug22 - Aug23:\t%f", diff22_23);
+    printf("\n\nDifference between Aug21 - Aug22:\t%0.1f", diff21_22);
+    printf("\nDifference between Aug21 - Aug23:\t%0.1f", diff21_23);
+    printf("\nDifference between Aug22 - Aug23:\t%0.1f", diff22_23);
 
     return 0;
 }

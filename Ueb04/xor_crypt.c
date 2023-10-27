@@ -16,11 +16,12 @@ int xor_crypt(){
     //read in first string
     char in [256];
     printf("please input a  string for encryption:\n");
-    scanf(" %255s", in);
+    fgets(&in, 256, stdin);
+    //scanf(" %255s", in);
 
     //look how long input-string is
     int length = 0;
-    while(in[length] != '\000')
+    while(in[length] != '\0')
         length++;
     length++;    //add 1 more for escape-sequence
 

@@ -11,7 +11,8 @@ int main() {
     printf("<--program for exercise 4-->\n");
     printf("Choose one of the following programs:\n");
     printf("(a) - bit_operators\n(b) - xor_crypt\n");
-    scanf(" %c", &input);
+    fgets(&input, 256, stdin);
+    //scanf(" %c", &input);
 
     switch (input) {
         case 'a':
