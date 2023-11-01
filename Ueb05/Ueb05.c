@@ -6,52 +6,31 @@
 #include "RGB_calculator.h"
 #include "unit_converter.h"
 
-
-int selector(char input){
-    switch (input) {
-        case 'a':
-            ascii_art();
-            break;
-        case 'b':
-            RGB_calculator();
-            break;
-        case 'c':
-            unit_converter();
-            break;
-        default:
-            return -1;
-    }
-    return 0;
-}
-
 int main() {
-    char seletion, run;
-    printf("<--program for exercise 5-->\n");
-
-
-    while(run != 'y'){
-        printf("Choose one of the following programs:\n");
-        printf("(a) - ascii-art\n(b) - RGB-calculator\n(c) - unit-converter\n");
-
-
-        printf("start another run? [y|n]\n")
-        scanf("%c" &run);
-        }
-    }
-    scanf(" %c", &input);
-
-    //Check input
-    while(selector(input) != 0){
-        printf("wrong input, try again\n");
-        scanf("%c", &input);
-    }
-    //call subprogram
-    selector(input);
-
-    //ask for other run
-
-
-
+    char run = 'y', choice;
+    printf("<--program for exercise 5-->");
+    do {                    //loop for multiple program runs
+        do {                //loop for correct input to choose program
+            printf("\nChoose one of the following programs:\n");
+            printf("(a) - ascii-art\n(b) - RGB-calculator\n(c) - unit-converter\n");
+            fgets(&choice, 256, stdin), fflush(stdin);
+            switch (choice) {        //select sub-program
+                case 'a':
+                    ascii_art();
+                    break;
+                case 'b':
+                    RGB_calculator();
+                    break;
+                case 'c':
+                    unit_converter();
+                    break;
+                default:
+                    printf("wrong input");
+            }
+        } while (choice != 'a' && choice != 'b' && choice != 'c');
+        printf("\n\nStart another run? [y|n]\n");
+        fgets(&run, 256, stdin), fflush(stdin);
+    }while(run != 'n');
     return 0;
 }
 
