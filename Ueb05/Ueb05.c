@@ -26,6 +26,7 @@ int main() {
                     break;
                 default:
                     printf("wrong input");
+                    continue;
             }
         } while (choice != 'a' && choice != 'b' && choice != 'c');
         printf("\n\nStart another run? [y|n]\n");

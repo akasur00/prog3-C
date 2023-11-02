@@ -13,5 +13,13 @@ add_executable(Ueb05_C
         RGB_calculator.h
         unit_converter.c
         unit_converter.h
+        unit_converter_sub/conv_temp.c
+        unit_converter_sub/conv_temp.h
+        unit_converter_sub/conv_area.c
+        unit_converter_sub/conv_area.h
+        unit_converter_sub/conv_weight.c
+        unit_converter_sub/conv_weight.h
+        unit_converter_sub/conv_length.c
+        unit_converter_sub/conv_length.h
 )
 
