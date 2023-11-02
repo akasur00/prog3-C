@@ -17,20 +17,28 @@ float celsius_to_fahrenheit(float celsius){
 
 float conv_temp(){
     char input_unit;
-    char input_value_str[32];
+    char str_in[32];
     float input_value;
+
     printf("<--Temperature units-->");
     printf("\nplease choose the unit of the input:\n(a) - Celsius\t(b) - Fahrenheit\n");
-    fgets(&input_unit, 256, stdin), fflush(stdin);
+
+    do {                                                                //choose input unit
+        fgets(str_in, 32, stdin), fflush(stdin);
+        sscanf(str_in, "%c", &input_unit);
+        if (input_unit != 'a' && input_unit != 'b') printf("wrong input");
+    } while (input_unit != 'a' && input_unit != 'b');
+
     printf("please input value \n");
-    fgets(input_value_str, 32, stdin), fflush(stdin);
-    sscanf(input_value_str, "%f", &input_value);
+    fgets(str_in, 32, stdin), fflush(stdin);
+    sscanf(str_in, "%f", &input_value);
+
     switch (input_unit) {
         case 'a':
-            printf("%0.2f °C ---> %0.2f °F", input_value, celsius_to_fahrenheit(input_value));  //Celsius to Fahrenheit
+            printf("%0.2f C ---> %0.2f F", input_value, celsius_to_fahrenheit(input_value));  //Celsius to Fahrenheit
             return 0;
         case 'b':
-            printf("%0.2f °F ---> %0.2f °C", input_value, fahrenheit_to_celsius(input_value));   //Fahrenheit to Celsius
+            printf("%0.2f F ---> %0.2f C", input_value, fahrenheit_to_celsius(input_value));   //Fahrenheit to Celsius
             return 0;
         default:
             return -1;

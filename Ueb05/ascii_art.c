@@ -6,7 +6,7 @@
 #include "limits.h"
 
 int ascii_art(){
-    printf("<--program for ascii-art-->");
+    printf("<--program for ascii-art-->\n");
     //print out all chars from 32 to 255
     for (int i = 32; i <= UCHAR_MAX; ++i) {
         printf("| %c\t%d\t%o\t%x", (unsigned char) i,i,i,i);

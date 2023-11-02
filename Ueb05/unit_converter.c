@@ -14,8 +14,11 @@ int unit_converter(){
     printf("<--program for conversion of units-->");
     printf("please choose one of the following units:\n"
            "(a) - length\t(b) - area\n(c) - weight\t(d) - temperature\n");
-    fgets(strin, 32, stdin), fflush(stdin);
-    sscanf(strin, "%c", &menu);
+    do {
+        fgets(strin, 32, stdin), fflush(stdin);
+        sscanf(strin, "%c", &menu);
+        if(menu != 'a' && menu != 'b' && menu != 'c' && menu != 'd') printf("wrong input");
+    } while (menu != 'a' && menu != 'b' && menu != 'c' && menu != 'd');
     switch (menu) {
         case 'a':
             conv_length();
@@ -30,7 +33,6 @@ int unit_converter(){
             conv_temp();
             break;
         default:
-            printf("wrong input");
             return -1;
     }
     return 0;
