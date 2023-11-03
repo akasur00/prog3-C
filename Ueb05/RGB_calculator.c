@@ -13,23 +13,23 @@ int compl_calc(int color){
 int RGB_calculator(){
     char str_in[32];
     int red, green, blue;
-    printf("<--program for RGB-webcode & complementary-->");
+    printf("<--program for RGB-webcode & complement-->");
 
-    printf("\nplease input a value from 0 to 255 for Red:\n");   //Red
+    printf("\nplease input a value between 0 and 255 for Red:\n");   //Red
     do {
         fgets(str_in, 32, stdin), fflush(stdin);
         sscanf(str_in, "%d", &red);
         if (red < 0 || red > 255) printf("value invalid\n");
     } while (red < 0 || red > 255);
 
-    printf("\nplease input a value from 0 to 255 for Green:\n");    //Green
+    printf("\nplease input a value between 0 and 255 for Green:\n");    //Green
     do {
         fgets(str_in, 32, stdin), fflush(stdin);
         sscanf(str_in, "%d", &green);
         if (green < 0 || green > 255) printf("value invalid\n");
     } while (green < 0 || green > 255);
 
-    printf("\nplease input a value from 0 to 255 for Blue:\n");     //Blue
+    printf("\nplease input a value between 0 and 255 for Blue:\n");     //Blue
     do {
         fgets(str_in, 32, stdin), fflush(stdin);
         sscanf(str_in, "%d", &blue);

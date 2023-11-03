@@ -41,7 +41,8 @@ float conv_length(){
     do {                                                                //choose input unit
         fgets(str_in, 32, stdin), fflush(stdin);
         sscanf(str_in, "%c", &input_unit);
-        if (input_unit != 'a' && input_unit != 'b' && input_unit != 'c' && input_unit != 'd' && input_unit != 'e') printf("wrong input");
+        if (input_unit != 'a' && input_unit != 'b' && input_unit != 'c' && input_unit != 'd' && input_unit != 'e')
+            printf("wrong input");
     } while (input_unit != 'a' && input_unit != 'b' && input_unit != 'c' && input_unit != 'd' && input_unit != 'e');
 
     printf("please input value \n");
