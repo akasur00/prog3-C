@@ -33,8 +33,7 @@ int main() {
                     unit_converter();
                     break;
                 default:
-                    printf("wrong input");
-                    continue;
+                    return -1
             }
 
         printf("\n\nStart another run? [y|n]\n");
