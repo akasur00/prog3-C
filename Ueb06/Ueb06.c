@@ -2,6 +2,8 @@
 // Created by Akasur on 22.10.2023.
 //
 #include<stdio.h>
+#include "prime.h"
+#include "invest.h"
 
 int main() {
     char str_in[32];
@@ -11,23 +13,20 @@ int main() {
 
     do {                    //loop for multiple program runs
         printf("\nChoose one of the following programs:\n");
-        printf("(a) - ascii-art\n(b) - RGB-calculator\n(c) - unit-converter\n");
+        printf("(a) - prime\t(b) - invest\n");
 
         do {                //loop for correct input to choose program
             fgets(str_in, 32, stdin), fflush(stdin);
             sscanf(str_in, "%c", &choice);
-            if(choice != 'a' && choice != 'b' && choice != 'c') printf("wrong input");
-        } while (choice != 'a' && choice != 'b' && choice != 'c');
+            if(choice != 'a' && choice != 'b') printf("wrong input");
+        } while (choice != 'a' && choice != 'b');
 
         switch (choice) {        //select sub-program
             case 'a':
-                //ascii_art();
+                prime();
                 break;
             case 'b':
-                //RGB_calculator();
-                break;
-            case 'c':
-                //unit_converter();
+                invest();
                 break;
             default:
                 return -1;

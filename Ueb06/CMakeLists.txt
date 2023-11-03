@@ -7,5 +7,9 @@ set(CMAKE_C_FLAGS "-lm")
 
 add_executable(Ueb06_C
         Ueb06.c
+        prime.c
+        prime.h
+        invest.c
+        invest.h
 )
 
