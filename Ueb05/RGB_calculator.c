@@ -37,7 +37,7 @@ int RGB_calculator(){
     } while (blue < 0 || blue > 255);
 
     printf("Input values as webcode:\n\t#%02X%02X%02X", red, green, blue);      //Output as webcode
-    printf("\ncomplement as hexcode:\n\t#%02X%02X%02X", compl_calc(red), compl_calc(green),
+    printf("\ncomplement as webcode:\n\t#%02X%02X%02X", compl_calc(red), compl_calc(green),
            compl_calc(blue));
 
     return 0;
