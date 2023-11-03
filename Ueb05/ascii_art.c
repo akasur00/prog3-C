@@ -10,7 +10,7 @@ int ascii_art(){
     //print out all chars from 32 to 255
     for (int i = 32; i <= UCHAR_MAX; ++i) {
         printf("| %c\t%d\t%o\t%x", (unsigned char) i,i,i,i);
-        (i % 11 == 0) ? printf("\n") : printf("\t\t");
+        ((i -31) % 11 == 0) ? printf("\n") : printf("\t\t");
     }
 
     //print out the ascii-art

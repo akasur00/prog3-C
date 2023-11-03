@@ -21,5 +21,6 @@ add_executable(Ueb05_C
         unit_converter_sub/conv_weight.h
         unit_converter_sub/conv_length.c
         unit_converter_sub/conv_length.h
+        ../Ueb06/Ueb06.c
 )
 
