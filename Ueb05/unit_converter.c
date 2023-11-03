@@ -9,17 +9,17 @@
 #include "unit_converter_sub/conv_temp.h"
 
 int unit_converter(){
-    char menu;
-    char strin[32];
+    char choice;
+    char str_in[32];
     printf("<--program for conversion of units-->");
     printf("please choose one of the following units:\n"
            "(a) - length\t(b) - area\n(c) - weight\t(d) - temperature\n");
     do {
-        fgets(strin, 32, stdin), fflush(stdin);
-        sscanf(strin, "%c", &menu);
-        if(menu != 'a' && menu != 'b' && menu != 'c' && menu != 'd') printf("wrong input");
-    } while (menu != 'a' && menu != 'b' && menu != 'c' && menu != 'd');
-    switch (menu) {
+        fgets(str_in, 32, stdin), fflush(stdin);
+        sscanf(str_in, "%c", &choice);
+        if(choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd') printf("wrong input");
+    } while (choice != 'a' && choice != 'b' && choice != 'c' && choice != 'd');
+    switch (choice) {
         case 'a':
             conv_length();
             break;
