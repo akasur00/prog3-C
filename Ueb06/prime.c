@@ -27,13 +27,17 @@ int isPrimeRec(int x, int div) {
 int prime(){
     char str_in [32];
     int in = 0;
+
     printf("\n<--program for determining if prime-->\n");
     printf("Please input a number: ");
 
     do {
         fgets(str_in, 32, stdin), fflush(stdin);
-            if(atoi(str_in)) printf("invalid input"), continue;
-        in = atoi(str_in);
+            if(atoi(str_in)) {                      //check if input is valid
+                in = atoi(str_in);
+            } else {                                //else: dismiss input
+                printf("invalid input  ");
+            }
     } while (in == 0);
 
     (isPrime(in)) ? printf("%d ist eine Primzahl.", in) : printf("%d ist keine Primzahl", in);
