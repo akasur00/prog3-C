@@ -5,30 +5,43 @@
 #include "prime.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "math.h"
+
+int prime_numbers[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
+                       41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83,
+                       89, 97, 101, 103, 107, 109, 113, 127, 131, 137,
+                       139, 149, 151, 157, 163, 167, 173, 179, 181,
+                       191, 193, 197, 199, 211, 223, 227, 229, 233,
+                       239, 241, 251, 257, 263, 269, 271, 277, 281,
+                       283, 293, 307, 311, 313, 317, 331, 337, 347,
+                       349, 353, 359, 367, 373, 379, 383, 389, 397,
+                       401, 409, 419, 421, 431, 433, 439, 443, 449,
+                       457, 461, 463, 467, 479, 487, 491, 499, 503,
+                       509, 521, 523, 541, 547, 557, 563, 569, 571,
+                       577, 587, 593, 599, 601, 607, 613, 617, 619,
+                       631, 641, 643, 647, 653, 659, 661, 673, 677,
+                       683, 691, 701, 709, 719, 727, 733, 739, 743,
+                       751, 757, 761, 769, 773, 787, 797, 809, 811,
+                       821, 823, 827, 829, 839, 853, 857, 859, 863,
+                       877, 881, 883, 887, 907, 911, 919, 929, 937,
+                       941, 947, 953, 967, 971, 977, 983, 991, 997};
 
 int isPrime(int x) {
-    if (x <= 1) return 0; // negatives, 0 and 1 are no primes by definition
-    for (int i = 2; i <= x/2; i++) {
-        if (x % i == 0) return 0; // if there is a divisor x is not prime
+    if (x <= 1) return 0;           // negatives, 0 and 1 are no primes by definition
+    int xsqrt = (int) sqrt(x);      //take square of input number
+    for (int i = 0; prime_numbers[i] <= xsqrt; i++) {        //run till value in prime_number array is bigger than sqrt of x
+        if ((x % prime_numbers[i]) == 0) {
+            return 0;
+        }
     }
-    return 1; // x is prime
-}
-
-int isPrimeRec(int x, int div) {
-    if (x==1) {
-        return 0;
-    } else if (x % div == 0) {
-        return 0;
-    } else {
-        return isPrimeRec(x, div-1);
-    }
+    return 1;
 }
 
 int prime(){
     char str_in [32];
     int in = 0;
 
-    printf("\n<--program for determining if prime-->\n");
+    printf("\n<--program for determining if a number is a prime number-->\n");
     printf("Please input a number: ");
 
     do {
@@ -36,10 +49,10 @@ int prime(){
             if(atoi(str_in)) {                      //check if input is valid
                 in = atoi(str_in);
             } else {                                //else: dismiss input
-                printf("invalid input  ");
+                printf("invalid input ");
             }
     } while (in == 0);
 
-    (isPrime(in)) ? printf("%d ist eine Primzahl.", in) : printf("%d ist keine Primzahl", in);
+    (isPrime(in)) ? printf("%d is a prime number.", in) : printf("%d is no prime number", in);
     return 0;
 }
