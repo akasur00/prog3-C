@@ -2,16 +2,18 @@
 // Created by Akasur on 22.10.2023.
 //
 #include<stdio.h>
+#include "slanted_throw.h"
+#include "unit_converter_generic.h"
 
 int main() {
     char str_in[32];
     char run, choice;
 
-    printf("<--program for exercise 5-->");
+    printf("<--program for exercise 8-->");
 
     do {                    //loop for multiple program runs
         printf("\nChoose one of the following programs:\n");
-        printf("(a) - prime\t(b) - invest\n");
+        printf("(a) - slanted throw\t(b) - unit_converter\n");
 
         do {                //loop for correct input to choose program
             fgets(str_in, 32, stdin), fflush(stdin);
@@ -21,10 +23,10 @@ int main() {
 
         switch (choice) {        //select sub-program
             case 'a':
-
+                slanted_throw();
                 break;
             case 'b':
-
+                unit_converter_generic();
                 break;
             default:
                 return -1;
